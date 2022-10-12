@@ -1,0 +1,310 @@
+<app-header></app-header>
+
+
+
+<div style="margin:0;padding:0">
+    <div>
+        <div class="alert alert-danger" *ngIf="toast">
+            <div style="display:flex;gap:2rem">
+                <mat-icon>highlight_off</mat-icon>please fill the required fields
+            </div>
+
+        </div>
+        <h1 style="padding:0 0 0 70px " class="heading">where to?</h1>
+        <!-- <p *ngIf="stateCtrl.invalid && (stateCtrl.dirty || stateCtrl.touched)" class="msg">fill this</p> -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;padding:20px 0 0 70px">
+            <div class="myDiv1" style="margin-left:70px;height:56px">
+                <form class="example-form">
+
+                    <mat-form-field class="example-full-width" appearance="outline" style="width:24rem">
+                        <mat-label>
+                            <mat-icon> location_on</mat-icon> Going to
+                        </mat-label>
+                        <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+
+                                <span>{{state.name}}</span>
+
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+
+
+
+                </form>
+
+            </div>
+
+
+            <div class="myDiv1" style="margin-left:35px;height:56px ;display:flex;gap:2rem" [formGroup]="dateRange" >
+                <mat-form-field color="accent" appearance="outline" >
+                    <mat-label>check-in</mat-label>
+                    <input matInput [matDatepicker]="picker1" formControlName="startDate">
+
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field color="accent" appearance="outline">
+                    <mat-label>Check-out</mat-label>
+                    <input matInput [matDatepicker]="picker2" formControlName="endDate" >
+
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+                <!-- <p *ngIf="dateRange.invalid && (dateRange.dirty || dateRange.touched)" class="msg">fill this field</p> -->
+            </div>
+
+
+            <!-- <button style="height:55px;width:24rem; margin-left: 20px;padding:0">
+                <div style="display:flex; flex-wrap:wrap; align-items:center;" >
+                    <mat-icon style="margin:0;padding:0">person</mat-icon>Travellers
+                </div>
+               
+            </button> -->
+            <a type=button mat-raised-button color="primary"
+                style="height:58px;width:58px; margin-left: 50px;border-radius:50%;padding-top:10px;"
+                (click)="searchBtn()">
+                <mat-icon>search</mat-icon>
+            </a>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div style="margin:15px 0 50px 15px ;">
+        <div>
+            <h1 style="padding:0 0 0 50px " class="heading">Hotels.com makes it easy and rewarding. Always</h1>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center;gap:2rem;">
+            <div
+                style="display:flex; flex-wrap:wrap; align-items:center;gap:2rem;padding:0 0 0 50px ; margin-top: 28px;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center;gap:rem;">
+                    <div style="padding:10px 4px 0 0px ;">
+                        <img src="https://a.travel-assets.com/egds/marks/loyalty_hotels.svg" alt=""
+                            style="width:50px;height:60px">
+                    </div>
+                    <div>
+                        <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Reward
+                            yourself
+                            your way</h4>
+                        <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">Stay where you want, when you
+                            want
+                        </p>
+                        <a href="" style="text-decoration:none;color:blue">Learn about Hotels.com Rewards</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="display:flex; flex-wrap:wrap; align-items:center;gap:2rem;padding:0 0 0 50px ; margin-top: 28px;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center;gap:rem;">
+                    <div style="padding-top:10px"><img
+                            src="https://a.travel-assets.com/egds/marks/brands/hotels/mod.svg" alt=""
+                            style="width:50px;height:60px"></div>
+                    <div>
+                        <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Unlock instant
+                            savings</h4>
+                        <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">You could get an extra 10% off
+                            with
+                            Secret Prices
+                        </p>
+                        <a href="auth/signup" style="text-decoration:none;color:blue">Sign up, it's free</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="display:flex; flex-wrap:wrap; align-items:center;gap:2rem;padding:0 0 0 50px ; margin-top: 28px;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center;gap:rem;">
+                    <div style="padding-top:10px"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNH9o4Tp2FOHo4U8SC8YHkSfZ7bkkMZGfgig&usqp=CAU"
+                            alt="" style="width:60px;height:60px;background-color: whitesmoke;border-radius:50% ;">
+                    </div>
+                    <div>
+                        <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Free
+                            cancellation
+                        </h4>
+                        <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">Flexible bookings on most hotels*
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr style="margin:0 60px 0 60px">
+
+    <div style="margin:15px 0 50px 15px ;">
+
+        <div>
+            <h1 style="padding:0 0 0 50px " class="heading">Travel with confidence</h1>
+        </div>
+        <div>
+            <p style="padding:0 0 0 50px">Many properties have updated us about their enhanced health and safety
+                measures.
+                So, during your search, you may find details like:</p>
+        </div>
+
+
+
+
+        <div style="display:flex; flex-wrap:wrap; align-items:center;gap:1rem;padding:0 0 0 50px ; margin-top: 28px;">
+            <mat-icon>verified_user</mat-icon>
+            <div>
+
+                <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Official health
+                    standardsn
+                </h4>
+                <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">Properties adhering to
+                    corporate/organisational sanitisation guidelines.</p>
+
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap">
+                <mat-icon style="padding:20px">wc</mat-icon>
+                <div>
+                    <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Social distancing
+                    </h4>
+                    <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">Contactless check-in and check-out
+                        along with
+                        other social distancing measures.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; align-items:center;gap:1rem;padding:0 0 0 50px ; margin-top: 28px;">
+
+            <mat-icon>invert_colors</mat-icon>
+            <div>
+
+                <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Hygiene and
+                    sanitisation
+                </h4>
+                <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">The use of disinfectant and whether
+                    properties enforce a gap period between stays.</p>
+
+            </div>
+
+
+            <div style="display:flex;flex-wrap:wrap">
+                <mat-icon style="padding:20px">spa</mat-icon>
+                <div>
+                    <h4 style="margin-block-end:0.33em;margin-block-start: 0.42em ; font-size:20px ;">Essentials at the
+                        property</h4>
+                    <p style="margin-block-end:0.42em;margin-block-start: 0.33em;">Free hand sanitiser for guests and
+                        individually wrapped food options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr style="margin:0 60px 0 60px">
+
+
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center;gap:2rem;margin:20px 0 30px 0">
+        <div>
+            <img id="reward"
+                src="data:image/png;base64,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"
+                alt="">
+            <p><a href="" style="text-decoration:none;color:blue">*See terms and conditions</a></p>
+        </div>
+
+        <div style="margin:0;">
+            <img id="hotel" src="https://a.cdn-hotels.com/kesstatic/16cb9904184e8e153945.png" alt="">
+            <p>
+                <mat-icon>check</mat-icon>Unlock Secret Prices! You could get 10% off
+            </p>
+            <p>
+                <mat-icon>check</mat-icon>Get 1 reward night* for every 10 nights you stay
+            </p>
+            <p>
+                <mat-icon>check</mat-icon>Rack up rewards in over 1 million properties worldwide
+            </p>
+            <div>
+                <button
+                    style="background-color:rgb(91, 91, 222);color:white;height:35px;width:80px;border-radius:25px ;margin:3px 12px 0 10px">join
+                    now</button>
+                <a href="auth/signin" style="text-decoration: none;color:blue">SIGN IN</a>
+            </div>
+        </div>
+
+    </div>
+    <hr style="margin:0 60px 0 60px">
+    <div style="margin:0 60px 0 85px">
+        <h1 style="padding:0 0 0 0px" class="heading">We do more than just hotels...</h1>
+        <div
+            style="margin:0 60px 0 60px;display:flex; flex-wrap:wrap; justify-content:flex-start;gap:2rem;margin:20px 0 20px 0">
+            <div class="gfg">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2022/01/26/hob_aa_hotel.jpg?impolicy=fcrop&w=280&h=210&quality=mediumHigh"
+                    alt="" style=" height:15rem;width:25rem">
+                <h3 class="first-txt">
+                    Hotel
+                </h3>
+            </div>
+            <div class="gfg">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2022/02/16/hob_aa_guest_house.jpg?impolicy=fcrop&w=280&h=210&quality=mediumHigh"
+                    alt="" style=" height:15rem;width:25rem">
+                <h3 class="first-txt">
+                    Guest Houses
+                </h3>
+            </div>
+            <div class="gfg">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2022/01/19/hob_aa_apartment.jpg?impolicy=fcrop&w=280&h=210&quality=mediumHigh"
+                    alt="" style=" height:15rem;width:25rem">
+                <h3 class="first-txt">
+                    Apartments
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div
+        style="margin:10px 88px 10px 88px;display:flex; flex-wrap:wrap; justify-content:flex-start;gap:2rem;border:2px solid whitesmoke">
+        <div>
+            <img src="https://a.travel-assets.com/mad-service/footer/bnaBanners/HCOM_POOL_Stocksy_300dpi.jpg" alt=""
+                style=" height:24rem;width:28rem">
+        </div>
+        <div>
+            <h1 style="font-size:30px;margin:20px 0 0 10px"> <strong> With the Hotels.com app, you:</strong> </h1>
+            <ul>
+                <li style="padding:7px">
+                    Get instant access to better pricing — an extra 10% off</li>
+                <li style="padding:7px">
+                    Earn 1 reward night* for every 10 nights you stay</li>
+                <li style="padding:7px">
+                    Search, book, and save on the go</li>
+            </ul>
+            <h1 style="font-size:24px ;margin-left:10px"> <strong>Text yourself a download link for easy access</strong>
+            </h1>
+
+            <button
+                style="background-color:rgb(91, 91, 222);color:white;height:4em;width:14em;border-radius:25px ;margin:3px 0px 0 28rem;font-size: 15px;">Get
+                the app</button>
+            <p style="margin:10px 0 0 10px">By providing your number, you agree to receive a one-time automated text
+                message with a link to get the app.
+            </p>
+            <p style="margin:0 0 0 10px"> Standard text message rates may apply.</p>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <app-footer></app-footer>

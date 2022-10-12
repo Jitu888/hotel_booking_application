@@ -1,0 +1,161 @@
+<app-header></app-header>
+
+ <div style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin:4rem 29rem 0 29rem   ; border-radius:2% ;background-color: whitesmoke;padding-bottom:10px ;" >
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;padding-top:10px ;">
+        <h4 style="padding-right:21rem ;">Adults</h4>
+
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="decrement()"
+            [disabled]="disableBtn"> - </button>
+        <p style="padding-top:5px">{{res}}</p>
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="increment()"
+            [disabled]="disableBtn"> + </button>
+
+    </div>
+
+
+
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem">
+        <h4 style="padding-right:22rem">Child</h4>
+
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px;" (click)="dec()"
+            [disabled]="disableBtn"> - </button>
+        <p style="padding-top:5px">{{&nbsp;&nbsp; resu}}</p>
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px;" (click)="inc()"
+            [disabled]="disableBtn"> + </button>
+
+    </div>
+
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem">
+        <h4 style="padding-right:21.5rem">Room</h4>
+
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="dece()"
+            [disabled]="disableBtn"> - </button>
+        <p style="padding-top:5px">{{resul}}</p>
+        <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="ince()"
+            [disabled]="disableBtn"> + </button>
+
+    </div>
+
+
+
+
+
+    <div class="form-group" style="width:35rem;display:flex">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required>
+               <label for="name">Id</label>
+               <input type="text" class="form-control" id="name"
+                      required>
+               <!-- [(ngModel)]="model.name" name="name" -->
+    </div>
+
+    <div class="form-group" style="width:35rem;">
+       
+               <!-- [(ngModel)]="model.name" name="name" -->
+    </div>
+
+
+    <button type="button" class="btn btn-primary text-center" style="margin:1.5rem 0 0 0rem">Proceed to Pay</button>
+
+</div>
+
+
+
+<!-- <mat-vertical-stepper [linear]="false" #stepper animationDuration="500">
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>your details</ng-template>
+            <hr>
+            <div style="border:3px solid whitesmoke; border-radius:10px ;width:35rem;">
+                <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:2rem;padding-top:10px;">
+                    <h4 style="margin-right:21rem ;">Adults</h4>
+
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px"
+                        (click)="decrement()" [disabled]="disableBtn"> - </button>
+                    <p style="padding-top:5px">{{res}}</p>
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px"
+                        (click)="increment()" [disabled]="disableBtn"> + </button>
+
+                </div>
+
+
+                <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:2rem">
+                    <h4 style="padding-right:21.5rem">Child</h4>
+
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px;" (click)="dec()"
+                        [disabled]="disableBtn"> - </button>
+                    <p style="padding-top:5px">{{&nbsp;&nbsp; resu}}</p>
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px;" (click)="inc()"
+                        [disabled]="disableBtn"> + </button>
+
+                </div>
+
+                <div style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:2rem">
+                    <h4 style="padding-right:21rem">Room</h4>
+
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="dece()"
+                        [disabled]="disableBtn"> - </button>
+                    <p style="padding-top:5px">{{resul}}</p>
+                    <button style="border:2px solid black;border-radius:50%;height:30px;width:30px" (click)="ince()"
+                        [disabled]="disableBtn"> + </button>
+
+                </div>
+            </div>
+
+
+            <mat-form-field style="width:35rem">
+
+                <input matInput placeholder="name" formControlName="name" required>
+
+
+
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width:35rem">
+
+                <input matInput placeholder="id" formControlName="id" required>
+
+
+
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Room Details</ng-template>
+            <div class="card text-center" style="width:35rem;height:25rem">
+                <div class="card-header" style="font-weight:900">
+                    Room Details
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+               
+            </div>
+            <!-- <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field> -->
+            <!-- <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Payment Details</ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper> --> -->

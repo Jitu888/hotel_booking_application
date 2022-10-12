@@ -1,0 +1,88 @@
+
+
+
+
+// .link{
+  
+   
+//  }
+
+
+
+
+.heading{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+// img{
+//     height:50px;
+//     width:50px;
+// }
+
+#reward{
+    height:200px;
+    width:200px
+}
+
+#hotel{
+    height:30px;
+    width:300px;
+    padding-top: 20px;
+}
+
+
+// .example-form {
+   
+//     width: 60%;
+//   }
+  
+//   .example-full-width {
+//     width: 30%;
+//   }
+  
+//   .example-option-img {
+//     vertical-align: middle;
+//     margin-right: 8px;
+//   }
+  
+//   [dir='rtl'] .example-option-img {
+//     margin-right: 0;
+//     margin-left: 8px;
+//   }
+
+.gfg {
+    
+    position: relative;
+}
+
+.first-txt {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    color:rgb(252, 246, 246);
+    text-decoration:ghostwhite;
+
+}
+
+
+.msg{
+    color:red;
+     margin-left: 9rem;
+     
+}
+  
+.myDiv{
+    margin-left:70px;
+    border-top:2px solid black !important;
+    height: 50px !important;
+}
+  
+.mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
