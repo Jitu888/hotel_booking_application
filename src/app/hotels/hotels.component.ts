@@ -17,7 +17,25 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class HotelsComponent implements OnInit {
   public city:any
-  result:any=[]
+  result:any=[{
+    hotelName:"abc",
+    city:"delhi",
+    rating:"3",
+    cheapestPrice:"1000"
+  },
+  {
+    hotelName:"abc",
+    city:"delhi",
+    rating:"3",
+    cheapestPrice:"1000"
+  },
+  {
+    hotelName:"abc",
+    city:"delhi",
+    rating:"3",
+    cheapestPrice:"1000"
+  }
+]
   panelOpenState = false;
   isDivVisible = false
   i:any=[0,1,2,3,4,5,6,7,8,9,10,11,12,13]
@@ -37,24 +55,24 @@ export class HotelsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.queryParams.subscribe((params:any)=>{
-        console.log(params.data)
-        this.city = params.data
-        const value1 = params.startDate.split(' ')
-        const value2 = params.endDate.split(' ')
-        console.log(value1,value2)
-        this.start_Date = value1[1] + " "+ value1[2]
-        this.end_Date = value2[1] +" "+ value2[2]
-        console.log("hhhhhhhhhhhh",this.city)
-    })
+    // this.route.queryParams.subscribe((params:any)=>{
+    //     console.log(params.data)
+    //     this.city = params.data
+    //     const value1 = params.startDate.split(' ')
+    //     const value2 = params.endDate.split(' ')
+    //     console.log(value1,value2)
+    //     this.start_Date = value1[1] + " "+ value1[2]
+    //     this.end_Date = value2[1] +" "+ value2[2]
+    //     console.log("hhhhhhhhhhhh",this.city)
+    // })
 
-    this.http.get(`http://localhost:8080/get_hotel?city=${this.city}`).
-    subscribe({
-      next: (r: any) => { this.result = r; console.log(this.result) },
-      error: (err: any) => {
-        console.error('Observer got an error:', err)
-      }
-    })
+    // this.http.get(`http://localhost:8080/get_hotel?city=${this.city}`).
+    // subscribe({
+    //   next: (r: any) => { this.result = r; console.log(this.result) },
+    //   error: (err: any) => {
+    //     console.error('Observer got an error:', err)
+    //   }
+    // })
    
   }
   stateCtrl = new FormControl('');
